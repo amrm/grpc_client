@@ -1,4 +1,9 @@
-# gRPC Server
+# gRPC Client
+
+Consume resources via Rest Template http://localhost:8081/client/product
+
+Consume resources via gRPC http://localhost:8082/server/grpc/product
+
 
 # What is gRPC?
 
