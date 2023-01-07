@@ -1,0 +1,39 @@
+syntax ="proto3";
+
+package com.daily.technical.knowledge.grpcClient;
+
+
+message Product{
+
+	int32 id =1;
+	string name = 2;
+	string category = 3;
+	double cost =4;
+	double price =5;
+	int32 expire =6;
+	int32 count =7;
+	string description =8;
+
+}
+
+message productsRequest{
+
+}
+
+message ProductsResponse{
+	repeated Product products = 1;
+}
+
+message productDetailRequest{
+	int32 id = 1;
+}
+
+message ProductDetailResponse{
+	Product product =1;
+}
+
+service productService{
+	rpc getProductDetail(productDetailRequest) returns (ProductDetailResponse);
+	rpc getProducts(productsRequest) returns (ProductsResponse);
+}
+
